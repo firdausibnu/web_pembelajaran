@@ -1,0 +1,75 @@
+/*
+    Created on : Dec 19, 2015, 16:00:20 AM
+    Author     : AGUNG SURYA BANGSA
+*/
+    
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper{
+    padding: 90px;
+    background: #fff;
+    text-align: center;
+    margin: auto;    
+    margin-top:30px;
+    opacity: 0;
+    height: 100%;
+    /*width: 900px;  */
+    box-shadow:0 1px 0px #D9D9D9,inset 0 0px 0px #F1F1F1; 
+     -o-box-shadow:0 1px 0px #D9D9D9,inset 0 0px 0px #F1F1F1; 
+     -webkit-box-shadow:0 1px 0px #D9D9D9,inset 0 0px 0px #F1F1F1; 
+     -moz-box-shadow:0 1px 0px #D9D9D9,inset 0 0px 0px #F1F1F1; 
+}
+
+.scrolls{
+    /*overflow-x: scroll;*/
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.holder{
+    cursor: pointer;
+    white-space: normal;
+    display: inline-block;
+}
+
+.holder ol{
+    margin: 0;
+    text-align: left;
+}
+
+.holder ol li{
+    list-style: lower-latin;
+}
+
+.holder ul li label{
+    cursor: pointer;
+}
+
+.choice{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.choice:hover{
+    background: #EFEFEF;
+}
+
+.choice.selected{
+    background: #EFEFEF;
+}
+
+.choice a{
+    color: #222;
+}
+
+.choice a:hover{
+    text-decoration: none;
+}
+
+/* overwrite Bootstrap's class */
+.panel{
+    margin-bottom: 0px;
+}

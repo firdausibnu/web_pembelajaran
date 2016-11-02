@@ -1,0 +1,146 @@
+a {
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: .5s ease;
+          transition: .5s ease;
+}
+a:hover {
+  color: #4E484A; 
+}
+
+.form {
+  background: white; //form background
+  padding: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 1px;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #fef8e0;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 16px;
+}
+label .req {
+  margin: 10px;
+  color: #DE8876;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+      -ms-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 13px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #000;
+}
+
+input, textarea {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 3px solid #a0b3b0;
+  color: #f47a62;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+          transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #f47a62; //warna box diklik
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #f47a62;
+  color: #fff;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #000; //login form diklik
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+/*-- banner-bottom --*/
+
+
+.bottom-grid h4{
+	font-size:26px;
+	color:#000;
+	font-weight: 700;
+	margin: 1em 0;
+	text-transform:uppercase;
+}
+
+.bottom-grid p{
+	font-size: 18px;
+	color: #000;
+	margin:0;
+	line-height: 1.8em;
+}

@@ -1,0 +1,838 @@
+html, button, input, select, textarea {
+	color: #222;
+}
+body {
+	font-size: 1em;
+	line-height: 1.4;
+        background-color: #dbe6d5;
+}
+
+.loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/hourglass.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+ background: #f2c2c9;
+ color: #a4003a;
+ text-shadow: none;
+}
+::selection {
+	background: #16a085;
+	color: #a4003a;
+	text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, #fff, #e6e6e6, #fff);
+	background-image: -moz-linear-gradient(left, #fff, #e6e6e6, #fff);
+	background-image: -ms-linear-gradient(left, #fff, #e6e6e6, #fff);
+	background-image: -o-linear-gradient(left, #fff, #e6e6e6, #fff);
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
+}
+
+img {
+	vertical-align: middle;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+html, body {
+	height: 100%;
+}
+body {
+	font-weight: 300;
+	font-size: 16px;
+	color: #555;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+}
+
+.col-md-3 {
+	padding-bottom: 30px;
+}
+.col-md-4 {
+        background-color: transparent;
+        
+}
+.row {
+	margin-right: 0px;
+	margin-left: -15px;
+}
+.modal-header {
+	background: #f47a62; //warna background
+}
+
+.modal-header button {
+        color: white;
+}
+
+.modal-header h4 {
+	color: #fef8e0;
+	font-weight: 800;
+        font-size: 35px;
+	letter-spacing: 1px;
+        font-family: "BebasBold";
+}
+
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.button-block {
+	color: #fef8e0;
+	font-weight: 800;
+        font-size: 30px;
+	letter-spacing: 1px;
+        font-family: "BebasBold";
+}
+
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.modal-footer {
+	background: #655D52;
+        padding-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #424242; //tulisan beranda sebelum diklik
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #00cbb5; //warna tulisan yang sedang diklik
+  background-color: #FCFCFC;
+}
+.navbar-default {
+	background-color: #f8f8f8;
+	padding: 25px 0; //besar menu
+	box-shadow: 0 0 3px #B0A48C; //shadow menu
+	font-weight: 500;
+        font-size: 30px;
+        font-family: "BebasBold";
+}
+
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar-default .navbar-brand {
+	font-weight: 500;
+	font-size: 30px;
+	color: #84b6b3; //tulisanwebdis (gelap)
+}
+.navbar-brand .fa {
+	color: #00cbb5; //orange
+        
+}
+.navbar-toggle {
+	border-color: transparent; //warnalogo
+	border: 0px transparent;
+        
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #00cbb5;	//tulisan yang diarahin
+}
+a img {
+	background:transparent;
+        margin-top: -15px;
+}
+.odd a img {
+	background: #f5f5f5;
+}
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 200;
+	color: #555;
+}
+
+h2 {
+   
+	font-size: 34px;
+	color: #fff;
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 22px;
+	font-weight: 550;
+}
+/* Paragraph & Typographic */
+p {
+	line-height: 30px;
+	margin-bottom: 20px;
+        color: #ffffff;
+}
+p.large {
+	font-size: 20px;
+	margin-bottom: 50px;
+}
+.centered {
+	text-align: center;
+}
+strong {
+	font-weight: 700;
+}
+em {
+	font-weight: 300;
+}
+pre {
+	background: #ebebeb;
+	border: none;
+	font-family: "Monaco";
+	font-size: 16px;
+	color: #666;
+	padding: 20px;
+	line-height: 28px;
+}
+small {
+	font-size: 12px;
+}
+blockquote, blockquote p {
+	line-height: 28px;
+	color: #999;
+	font-weight: 300;
+	font-style: italic;
+}
+blockquote {
+	position: relative;
+	margin: 0 0 40px -30px;
+	padding-left: 30px;
+	border-left: 5px solid #3498db;
+}
+blockquote cite {
+	position: absolute;
+	bottom: -25px;
+	right: 0;
+	font-size: 12px;
+	font-style: italic;
+	color: #333;
+	font-weight: 300;
+}
+blockquote cite:before {
+	content: "-- "
+}
+/* Images */
+.overflow-image {
+	margin-top: -65px;
+}
+/* Links */
+a {
+	color: #4abcc5;
+	word-wrap: break-word;
+	-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-o-transition: color 0.1s ease-in, background 0.1s ease-in;
+	transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+a:hover, a:focus {
+	color: #c0392b;
+	text-decoration: none;
+	outline: 0;
+}
+a:before, a:after {
+	-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+	-o-transition: color 0.1s ease-in, background 0.1s ease-in;
+	transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#headerwrap {
+	background: url(../img/bg1.jpg) no-repeat center top;
+	padding-top: 70px;
+	text-align: center;
+	background-position: center center;
+	min-height: 750px;
+	width: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 100px;
+	margin-top: 30px;
+       
+}
+#headerwrap h1 {
+	color: #fef8e0;
+	font-size: 110px;
+	font-weight: 600;
+	text-align: center;
+	letter-spacing: 2px;
+        padding-top: 50px;
+        line-height: 80px;
+        
+}
+#headerwrap h1{
+   font-family: "BebasBold"; 
+}
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#headerwrap h2 {
+	color: #fef8e0;
+	font-size: 40px;
+	font-weight: 200;
+	text-align: center;
+	letter-spacing: 3px;
+        line-height: 30px;
+        
+}
+#headerwrap h2{
+   font-family: "OstrichSans-Medium"; 
+}
+@font-face {
+    font-family: 'OstrichSans-Medium';
+    src: url('../fonts/OstrichSans-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#headerwrap .btn {
+	margin: 10px 0;
+	background-color: #ff7364;
+	color: #FFFFCC;
+	border: 5px solid #ff7364;
+        padding-left: 80px;
+        padding-right: 80px;
+}
+#headerwrap .btn {
+   font-family: "BebasRegular"; 
+   line-height: 20px;
+   font-size: 30px;
+   letter-spacing: 10px;
+}
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('../fonts/BebasRegular.otf');
+    font-weight:400;
+    font-style: normal;
+    line-height:500;
+   
+   
+}
+#headerwrap .btn:hover, #headerwrap .btn:focus {
+	color: #555;
+	background-color: #fff9e1;
+	outline: 0px;
+	border: 5px solid #fff9e1;
+}
+#informasi {
+	background: #dbe6d5;
+	padding-top: 90px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 135px;
+}
+#informasi h2{
+   font-family: "BebasBold"; 
+   font-size: 70px;
+   text-align: center;
+   color: #494a4e;
+}
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#informasi p{
+        color: #000;
+}
+
+#informasi img {
+	margin-top: 0;
+}
+#informasi hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
+}
+#materi {
+	background-color: #84b6b3;
+	padding: 110px 0;
+}
+#materi .btn-default {
+	border: 0;
+}
+#materi h2{
+   font-family: "BebasBold"; 
+   font-size: 70px;
+   color: #fef8e0;
+}
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#materi hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #fff, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #fff, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #fff, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #fff, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
+}
+#materi1 {
+	background: #dbe6d5;
+	padding-top: 110px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 60px;
+}
+#materi1 h2 {
+        color: #494a4e;
+}
+
+#materi1 img {
+	margin-top: 0;
+}
+#materi1 h2{
+   font-family: "BebasBold"; 
+   font-size: 50px;
+}
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#mat {
+    padding-bottom: 30px;
+	
+}
+#materi1 h3{
+   font-size: 29px;
+   font-color: #fef8e0;
+
+}
+#materi1 h4{
+   font-family: "BebasRegular"; 
+   font-size: 25px;
+   font-color: #fef8e0;
+}
+
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('../fonts/BebasRegular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#materi1 hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #2f2f2f, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 10%;
+	position: relative;
+	border: none;
+}
+
+#materi2 h2 {
+ color: #fef8e0;       
+}
+#materi2 h2{
+   font-family: "BebasBold"; 
+   font-size: 50px;
+   color: #fef8e0;
+}
+
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#materi2 h3{
+   font-size: 29px;
+   font-color: #fef8e0;
+   
+
+}
+#materi2  h4{
+    color: #fef8e0;
+    font-family: "BebasRegular"; 
+   font-size: 25px;
+}
+
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('../fonts/BebasRegular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#materi2 h3{
+    color: #fef8e0;
+    font-size: 25px;
+}
+
+#materi2 {
+	background: #84b6b3;
+	padding-top: 110px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 60px;
+}
+#materi2 img {
+	margin-top: 0;
+}
+
+#materi2 hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #fef8e0, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 15%;
+	position: relative;
+	border: none;
+}
+
+#kuis hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), #494a4e, rgba(255, 255, 255, 0));
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
+}
+#kuis {
+	background-color: #dbe6d5;
+	padding: 130px 0px 260px 0px;
+	text-align: center;
+	background-size: cover;
+}
+
+#kuis h2{
+   font-family: "BebasBold"; 
+   font-size: 50px;
+   color: #494a4e;
+}
+
+@font-face {
+    font-family: 'BebasBold';
+    src: url('../fonts/BebasBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#kuis p {
+	color: #494a4e;
+        font-size: 25px;
+}
+#kuis a {
+	color: #fff;
+        font-size: 28px;
+       
+}
+#kuis H4 {
+	padding-top: 10px;
+	color: #fff;
+	font-weight:bold;
+}
+#kuis p.large {
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+#kuis .fa {
+	width: 30px;
+	height: 30px;
+	margin: 0 3px;
+	border-radius: 100%;
+	font-size: 15px;
+	line-height: 30px;
+	outline: 0;
+	color: #fff;
+	background-color: #67c5d3;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+}
+#kuis .fa:hover {
+	background-color: #2ea0b1;
+}
+
+#greywrap {
+	background: #f5f5f5;
+	margin-top: 0px;
+	padding: 50px 0;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+}
+#greywrap .btn {
+	font-family: "Raleway";
+	font-weight: 300;
+	font-size: 20px;
+	margin: 0 25px;
+	background-color: #fff;
+	border-color: #e2e2e2;
+	color: #888;
+	border-bottom: 0;
+	letter-spacing: 1px;
+}
+#greywrap .btn:hover, #greywrap .btn:focus {
+	margin: 0 25px;
+	background-color: #fff;
+	border-color: #a5cdd5;
+	border-bottom: 0;
+	outline: 0px;
+	color: #a5cdd5;
+}
+#greywrap h2 {
+	font-size: 30px;
+}
+#greywrap .callout {
+	margin-bottom: 20px;
+}
+#greywrap p {
+	font-size: 30px;
+}
+#greywrap .fa {
+	font-size: 18px;
+	margin-right: 4px;
+}
+#footerwrap {
+	background: #F8F8F8;
+	padding: 25px 0 15px 0;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+#footerwrap span.copyright {
+	line-height: 40px;
+	color: #888;
+	font-weight: 600;
+        font-size: 20px;
+}
+#footerwrap span.copyright a {
+	color: #888;
+	border-bottom: 1px dotted;
+}
+#footerwrap span.copyright a:hover {
+	color: #F47A62;
+	text-decoration: none;
+}
+#footerwrap h4 {
+	color: white;
+}
+ul.social-buttons {
+	margin: 0;
+}
+ul.social-buttons li a {
+	font-size: 40px;
+	outline: 0;
+	color: #999;
+}
+ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
+	color: #3ab7cb;
+}
+/* ==========================================================================
+   Box Sections
+   ========================================================================== */
+
+.white h1 {
+	color: #999;
+}
+.white p {
+	padding-top: 25px;
+}
+
+/* ==========================================================================
+   Image Mask
+   ========================================================================== */
+
+.grid figure {
+	margin: 0;
+	position: relative;
+	border: 1px solid #ddd;
+}
+.grid figure img {
+	width: 100%;
+	display: block;
+	position: relative;
+	
+}
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	color: #fff;
+	background-color: #ff7364;
+}
+.grid figcaption h5 {
+	margin: 0;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+	color: #fff;
+	font-weight: 700;
+	text-align: left;
+	letter-spacing: 1px;
+}
+.grid figcaption a {
+	text-align: left;
+	padding: 5px 10px;
+	margin-left: 20px;
+	display: inline-block;
+	background: #2f2f2f;
+	color: #fff;
+	font-size: 13px;
+}
+/* Caption Style */
+.mask figure {
+	overflow: hidden;
+}
+.mask figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+.no-touch .mask figure:hover img, .mask figure.cs-hover img {
+	-webkit-transform: translateY(-30px);
+	-moz-transform: translateY(-30px);
+	-ms-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+.mask figcaption {
+	height: 50px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.no-touch .mask figure:hover figcaption, .mask figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+.mask figcaption a {
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	right: 30px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+
+@media screen and (max-width:1050px), screen and (max-device-width:1050px) {
+body .header {
+	background-attachment: scroll;
+}
+}
+
+/*ipad portrait*/
+@media only screen and (min-device-width:768px) and (max-device-width : 1024px) and (orientation : portrait) {
+.header {
+	background-attachment: scroll;
+}
+}
+
+@media screen and (max-width:769px) {
+#headerwrap h1 {
+	font-size: 40px;
+}
+#headerwrap p {
+	font-size: 20px;
+}
+}

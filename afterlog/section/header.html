@@ -1,0 +1,48 @@
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="#beranda"><img src="../img/logo-unj.png" height="40px" weight="40px" align="left"/><img src="../img/logo/logo-kecil.png" align="center"/></a> DESAIN WEB </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#beranda" class="smoothScroll">HOME</a></li>
+          <li> <a href="#informasi" class="smoothScroll">INFORMASI</a></li>
+          <li> <a href="#materi" class="smoothScroll"> MATERI</a></li>
+          <li> <a href="#kuis" class="smoothScroll"> LATIHAN</a></li>
+          <li><a href="#beranda" class="smoothScroll">Hallo, <?php echo $_SESSION['username'];?>!</a></li>
+          <li><a href="#myModal" data-toggle="modal" class="smoothScroll">LOGOUT</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4>Apakah Anda Yakin Ingin Keluar?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!-- FORM -->
+                            <div class="form">
+                                <!--tab-content -->
+                                <div class="tab-content"> 
+                                    <div id="login">
+                                        <a href="../afterlog/login/logout.php" class="button button-block text-center" role="button" style="background-color:#F47A62" >YA</a><br/>
+                                           <a href="../afterlog/index.php" class="button button-block text-center" role="button" style="background-color:#F47A62">TIDAK</a>
+                                    </div>
+                                    <div></div> 
+                                </div> <!-- /tab-content -->
+                            </div><!-- /FORM --> 
+                        </div>
+                        <!-- /.modal-content --> 
+                    </div>
+                    <!-- /.modal-dialog --> 
+                </div>
+                <!-- /.modal --> 
+            </div>
