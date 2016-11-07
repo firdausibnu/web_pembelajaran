@@ -1,12 +1,7 @@
 <?php
 require_once "../connect/a_connect.php";
 
-$sql = "SELECT * from mata_kuliah";
-$stmt = $db->prepare($sql);
-$stmt->execute();
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-  $no = 1;
 ?>
 <div class="row">
       <div class="col-xs-12">
@@ -33,6 +28,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
               </tr>
               </thead>
               <tbody>
+                <?php
+                $sql = "SELECT * from mata_kuliah";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                  $no = 1;
+
+                ?>
                 <tr>
                   <td><?=$no?></td>
                   <td><?=$row['kode_seksi']?></td>
@@ -44,6 +48,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                   <td><?=$row['rpkps']?></td>
                   <td><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </td>
                 </tr>
+                <?php $no++;}?>
               </tbody>
               <tfoot>
               <tr>
@@ -67,7 +72,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       </div>
       <!-- /.col -->
     </div>
-<?php $no++;}?>
+
 
 <!-- Modal -->
 <div class="modal fade" id="ModalTambahData" tabindex="-1" role="dialog" aria-labelledby="MtambahData">
