@@ -19,17 +19,19 @@ if(isset($_POST["submit"])){
       $file_name_rpkps = $_FILES['rpkps']['name']; //get nama file dari form
       $file_tmp_rpkps = $_FILES['rpkps']['tmp_name']; //set nama file yang akan disimpan ke direktori
 
-    
       $value = explode(".", $file_name_rpkps);
+      $file_ext_rpkps = end($value);
+       
       
-      $file_ext_rpkps = strtolower(array_pop($value));
+      // $value = explode(".", $file_name_rpkps);
+      // $file_ext_rpkps = strtolower(array_pop($value));
       
-      $temp_rpkps = 'Rpkps'.'_'.$kode_seksi;
+      $temp_rpkps = 'Rpkps'.'_'.$kode_seksi.'.'.$file_ext_rpkps;
 
       
       if (in_array($file_ext_rpkps, $allowed_ext) === true){ //cek extensi
       
-        $lokasi_rpkps = '../../../../rpkps/' . $temp_rpkps. '.' . $file_ext_rpkps;
+        $lokasi_rpkps = '../../../../rpkps/' . $temp_rpkps;
 
         $move = move_uploaded_file($file_tmp_rpkps, $lokasi_rpkps); //pindah
 
@@ -57,7 +59,7 @@ if(isset($_POST["submit"])){
            
        }else {
              echo "<script>
-              alert('GAGAL, Ada File Bukan DOC, DOCX');
+              alert('GAGAL, File Bukan DOCX');
               window.location = 'http://localhost/web_pembelajaran/afterlog/admin/index.php?p=mk&l=1'
               </script>";
             }

@@ -46,7 +46,8 @@ require_once "../connect/a_connect.php";
                   <td><?=$row['praktek_sks']?></td>
                   <td><?=$row['total_sks']?></td>
                   <td><?=$row['rpkps']?></td>
-                  <td><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </td>
+                  <td><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
+                      <a href="proc/delete/mk.php?n=<?= $row['kode_seksi'] ?>"onclick="return confirm('Yakin Ingin Menghapus Mata Kuliah Ini ?');" data-toggle="tooltip" title="Hapus"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </td>
                 </tr>
                 <?php $no++;}?>
               </tbody>
@@ -87,7 +88,7 @@ require_once "../connect/a_connect.php";
         <div class="box-body">
           <div class="form-group">
             <label for="kode_seksi">Kode Seksi</label>
-            <input name="kosek" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi">
+            <input name="kosek" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi" min="1" >
           </div>
           <div class="form-group">
             <label for="nama_mk">Nama Mata Kuliah</label>
@@ -108,11 +109,11 @@ require_once "../connect/a_connect.php";
           </div>
           <div class="form-group">
             <label for="sks-teori">SKS (Teori)</label>
-            <input name="sks_teori" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi">
+            <input name="sks_teori" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi" min="0">
           </div>
           <div class="form-group">
             <label for="kode_seksi">SKS (Praktek)</label>
-            <input name="sks_praktek" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi">
+            <input name="sks_praktek" type="number" class="form-control" id="kode_seksi" placeholder="Masukan Kode Seksi" min="0">
           </div>
           <div class="form-group">
             <label for="kode_seksi">SKS (Total)</label>
