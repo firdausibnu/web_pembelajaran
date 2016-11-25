@@ -50,11 +50,11 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="row">
                       <div class="col-xs-8 col-md-6">
                       <label for="sks-teori">Waktu Mulai</label>
-                      <input name="waktu_mulai" type="text" class="form-control" id="waktu_mulai" value="<?php echo $data['waktu_mulai'];?>"  placeholder="Waktu Mulai">
+                      <input name="waktu_mulai" type="text" class="form-control for_time" id="waktu_mulai" value="<?php echo $data['waktu_mulai'];?>"  placeholder="Waktu Mulai">
                       </div>
                       <div class="col-xs-8 col-md-6">
                       <label for="kode_seksi">Waktu Selesai</label>
-                      <input name="waktu_selesai" type="text" class="form-control" id="waktu_selesai" value="<?php echo $data['waktu_selesai'];?>"  placeholder="Waktu Selesai">
+                      <input name="waktu_selesai" type="text" class="form-control for_time" id="waktu_selesai" value="<?php echo $data['waktu_selesai'];?>"  placeholder="Waktu Selesai">
                     </div>
                   </div>
                     </div>
@@ -64,6 +64,11 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                     <button type="submit" class="btn btn-success" name="submit-user-manual">Edit Data</button>
                 </div>
             </form>
+<script src="login/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="login/adminlte/dtpicker/moment.js"></script>
+        <script src="login/adminlte/bootstrap/js/transition.js"></script>
+        <script src="login/adminlte/bootstrap/js/collapse.js"></script>
+        <script src="login/adminlte/dtpicker/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
     $('.for_time').datetimepicker({ format: 'Y:M:D HH:mm:ss' });
 </script>

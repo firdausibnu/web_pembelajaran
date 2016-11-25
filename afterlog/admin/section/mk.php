@@ -48,11 +48,11 @@ require_once "../connect/a_connect.php";
                   <td><?=$row['rpkps']?></td>
                   <td>
                     <a href="proc/get/mk.php?n=<?= $row['kode_seksi'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>E
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
                                     
                     <a href="proc/delete/mk.php?d=<?= $row['kode_seksi']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus">
-                    <i class="fa fa-times-circle" aria-hidden="true"></i>D
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
                     </a> 
                   </td>
                 </tr>

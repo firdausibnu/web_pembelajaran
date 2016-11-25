@@ -39,7 +39,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
                         <div class="form-group">
                             <label for="Nama">Materi</label>
-                            <textarea class="form-control ckeditor" id="editor1" name="materi" placeholder="Materi" class="materialize-textarea" rows="6"><?php echo $data['materi']; ?></textarea>
+                            <textarea class="form-control ckeditor" id="editore" name="materi" placeholder="Materi" class="materialize-textarea" rows="6"><?php echo $data['materi']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="nim">File Materi</label>
@@ -64,3 +64,9 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                     <button type="submit" class="btn btn-success" name="submit">Tambah Data</button>
                 </div>
             </form>
+<script src="login/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="login/adminlte/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+	CKEDITOR.replace('editore');
+	CKEDITOR.add;
+</script>

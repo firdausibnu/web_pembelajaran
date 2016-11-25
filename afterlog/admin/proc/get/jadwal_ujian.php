@@ -61,6 +61,11 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                     <button type="submit" class="btn btn-success" name="submit-user-manual">Edit Data</button>
                 </div>
             </form>
+<script src="login/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="login/adminlte/dtpicker/moment.js"></script>
+        <script src="login/adminlte/bootstrap/js/transition.js"></script>
+        <script src="login/adminlte/bootstrap/js/collapse.js"></script>
+        <script src="login/adminlte/dtpicker/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
-    $('.for_time').datetimepicker({ format: 'Y:M:D HH:mm:ss' });
+    $('.for_time').datetimepicker({ format: 'Y:M:D' });
 </script>
