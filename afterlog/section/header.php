@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  function editprofile()
+        {
+       $('#ModalProfile').modal('hide');
+              $('#ModalEditProfile').modal();
+            }
+</script>
 <div id="navbar-main"> 
   <!-- Fixed navbar -->
   <div class="navbar navbar-default navbar-fixed-top">
@@ -11,7 +18,7 @@
           <li> <a href="#informasi" class="smoothScroll">INFORMASI</a></li>
           <li> <a href="#materi" class="smoothScroll"> MATERI</a></li>
           <li> <a href="#kuis" class="smoothScroll"> LATIHAN</a></li>
-          <li><a href="#" data-target="#ModalEditProfile" data-toggle="modal" class="smoothScroll">Hallo, <?php echo $data['nama'];?>!</a></li>
+          <li><a href="#" data-target="#ModalProfile" data-toggle="modal" class="smoothScroll">Hallo, <?php echo $data['nama'];?>!</a></li>
           <li><a href="#myModal" data-toggle="modal" class="smoothScroll">LOGOUT</a></li>
         </ul>
       </div>
@@ -53,6 +60,23 @@
       </div>
     </form>
     </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ModalProfile" tabindex="-1" role="dialog" aria-labelledby="MtambahData">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Profile</h4>
+      </div>
+      <center><img style="max-width: 150px;max-height: 150px;margin-top: 10px;border-radius: 100%;border: 5px solid #eee;" src="../foto_profile/<?php echo $data['foto'];?>"></center>
+      <center style="font-size: 24px;"><?php echo $data['nama']; ?></center>
+      <center><?php echo $data['email']; ?></center>
+      <div class="modal-footer">
+        <button type="submit" onclick="editprofile()" class="btn btn-primary" name="submit">Edit Profile</button>
+      </div>
+    </div>  
   </div>
 </div>
 

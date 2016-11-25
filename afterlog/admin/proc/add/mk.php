@@ -46,7 +46,7 @@ if(isset($_POST["submit"])){
 
         $sql = "INSERT INTO mata_kuliah(kode_seksi, nama_mk, jenis_mk, teori_sks, praktek_sks, total_sks, rpkps, cover_img) VALUES 
         ('" . $kode_seksi . "', '" . $nama_mk. "', '" . $jenis_mk . "', '" . $teori . "', '" . $praktek . "',
-          '" . $total_sks. "', '" . $temp_rpkps. "', '" . $cover_img . "')";    
+          '" . $total_sks. "', '" . $temp_rpkps. ".".$file_ext_rpkps. "', '" . $cover_img . "')";    
         
         $stmt = $db->prepare($sql);
         $stmt->execute();

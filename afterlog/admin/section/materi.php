@@ -33,21 +33,20 @@ require_once "../connect/a_connect.php";
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                 <tr>
-                                    <td><?= $no++ ?></td>
+                                    <td><?= $no ?></td>
                                     <td><?= $row['kode_seksi'] ?></td>
                                     <td><?= $row['judul_materi'] ?></td>
-                                    <!-- <td><?= $row['materi'] ?></td> -->
                                     <td><?= $row['tugas'] ?></td>
                                     <td><?= $row['img_materi'] ?></td>
                                     <td><?= $row['video_materi'] ?></td>
                                     <td>
 
-                                    <a href="proc/get/materi.php?n=<?= $row['nim'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <a href="proc/get/materi.php?n=<?= $row['id'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>E
                                     </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
                                     
-                                    <a href="proc/delete/materi.php?d=<?= $row['nim']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus">
-                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    <a href="proc/delete/materi.php?d=<?= $row['id']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>D
                                     </a> 
                                     </td>
                                 </tr>

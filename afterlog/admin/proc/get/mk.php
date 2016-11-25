@@ -22,7 +22,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="box-body">
                         <div class="form-group">
                             <label for="kode_seksi">Kode Seksi</label>
-                            <input name="kode_seksi" type="number" min="0" class="form-control" id="kode_seksi" value="<?php echo $row['kode_seksi'];?>" disabled>
+                            <input name="kode_seksi" type="number" min="0" class="form-control" id="kode_seksi" value="<?php echo $row['kode_seksi'];?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="nama_mk">Nama Mata Kuliah</label>
@@ -42,11 +42,11 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
                       <div class="form-group">
                             <label for="sks-teori">SKS (Teori)</label>
-                            <input name="sks_teori" type="number" class="form-control" id="kode_seksi" value="<?php echo $row['teori_sks'];?>" placeholder="Masukan Kode Seksi">
+                            <input name="teori_sks" type="number" class="form-control" id="kode_seksi" value="<?php echo $row['teori_sks'];?>" placeholder="Masukan Kode Seksi">
                       </div>
                       <div class="form-group">
                             <label for="kode_seksi">SKS (Praktek)</label>
-                            <input name="sks_praktek" type="number" class="form-control" id="kode_seksi" value="<?php echo $row['praktek_sks'];?>" placeholder="Masukan Kode Seksi">
+                            <input name="praktek_sks" type="number" class="form-control" id="kode_seksi" value="<?php echo $row['praktek_sks'];?>" placeholder="Masukan Kode Seksi">
                       </div>
                       <div class="form-group">
                             <label for="kode_seksi">SKS (Total)</label>

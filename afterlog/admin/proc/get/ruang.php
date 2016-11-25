@@ -7,8 +7,8 @@ require_once "../../../connect/a_connect.php";
  * and open the template in the editor.
  */
 // LA101 Lab (Gedung Elektro) 101
-$kode_ruang = $_GET['n'];
-$sql = "select * from jadwal_ujian where kode_ruang='L1209'";
+$id = $_GET['n'];
+$sql = "select * from ref_ruang where id='$id'";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -26,6 +26,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                             <input name="kode_ruang" value="<?php echo $data['kode_ruang'];?>" type="text" class="form-control" id="kode_ruang" placeholder="Kode Ruang" required/>
                           </div>
                           </div>
+                          <input type="hidden" name="id" value="<?php echo $data['id'];?>">
                           <div class="form">
                             <div class="col-xs-12 col-md-12">
                             <label for="sks-teori">Deskripsi</label>

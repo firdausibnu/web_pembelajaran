@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         
         $allowed_ext = array(
             'docx',
-            'doc'
+            'doc', 'pdf'
         );
         
         $file_name_file_materi = $_FILES['file_materi']['name']; //get nama file dari form
@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
         
         $file_ext_file_materi = strtolower(array_pop($value));
         
-        $temp_file_materi = 'file_materi' . '_' . $kode_seksi;
+        $temp_file_materi = 'file_materi' . '_' . $judul_materi . '_' . $kode_seksi;
         
         
         if (in_array($file_ext_file_materi, $allowed_ext) === true) { //cek extensi
@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
                     
                     $allowed_ext = array(
                         'docx',
-                        'doc'
+                        'doc', 'pdf'
                     );
                     
                     $file_name_tugas = $_FILES['tugas']['name']; //get nama file dari form
@@ -52,7 +52,7 @@ if (isset($_POST["submit"])) {
                     
                     $file_ext_tugas = strtolower(array_pop($value));
                     
-                    $temp_tugas = 'tugas' . '_' . $kode_seksi;
+                    $temp_tugas = 'tugas' . '_' . $judul_materi . '_' . $kode_seksi;
                     
                     
                     if (in_array($file_ext_tugas, $allowed_ext) === true) { //cek extensi
@@ -85,7 +85,7 @@ if (isset($_POST["submit"])) {
                                     
                                     $file_ext_video_materi = strtolower(array_pop($value));
                                     
-                                    $temp_video_materi = 'video_materi' . '_' . $kode_seksi;
+                                    $temp_video_materi = 'video_materi' . '_' . $judul_materi . '_' . $kode_seksi;
                                     
                                     
                                     
@@ -99,7 +99,7 @@ if (isset($_POST["submit"])) {
                                         if ($move) {
                                             
                                             $sql = "INSERT INTO materi(kode_seksi, judul_materi, materi, file_materi, tugas, img_materi, video_materi) VALUES 
-        ('" . $kode_seksi . "', '" . $judul_materi . "', '" . $materi . "', '" . $temp_file_materi . "', '" . $temp_tugas . "', '" . $img_materi . "', '" . $temp_video_materi . "')";
+                                                ('" . $kode_seksi . "', '" . $judul_materi . "', '" . $materi . "', '" . $temp_file_materi . ".".$file_ext_file_materi. "', '" . $temp_tugas . ".".$file_ext_tugas. "', '" . $img_materi . "', '" . $temp_video_materi.".".$file_ext_video_materi. "')";
                                             
                                             $stmt = $db->prepare($sql);
                                             $stmt->execute();
