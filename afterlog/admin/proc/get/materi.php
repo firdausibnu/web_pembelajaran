@@ -35,27 +35,27 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
                         <div class="form-group">
                             <label for="nim">Judul Materi</label>
-                            <input name="judul_materi" value="<?php echo $data['judul_materi']; ?>" type="text" class="form-control" id="nim" placeholder="Judul Materi"/>
+                            <input name="judul_materi" type="text" class="form-control" id="nim" placeholder="Judul Materi"/>
                         </div>
                         <div class="form-group">
                             <label for="Nama">Materi</label>
-                            <textarea class="form-control ckeditor" id="editor1" name="materi" placeholder="Materi" class="materialize-textarea" rows="6"><?php echo $data['materi']; ?></textarea>
+                            <textarea class="form-control ckeditor" id="editor1" name="materi" placeholder="Materi" class="materialize-textarea" rows="6"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="nim">File Materi</label>
-                            <input name="file_materi" id="file_materi" value="<?php echo $data['file_materi']; ?>" type="file" class="form-control" id="nim" placeholder="Video Materi"/>
+                            <input name="file_materi" id="file_materi" type="file" class="form-control" id="nim" placeholder="Video Materi"/>
                         </div>
                         <div class="form-group">
                             <label for="Nama">Tugas</label>
-                            <input name="tugas" id="tugas" type="file" value="<?php echo $data['tugas']; ?>" class="form-control" id="nim" placeholder="Tugas"/>
+                            <input name="tugas" id="tugas" type="file" class="form-control" id="nim" placeholder="Tugas"/>
                         </div>
                         <div class="form-group">
                             <label for="nim">Gambar Materi</label>
-                            <input name="img_materi" id="img_materi" value="<?php echo $data['img_materi']; ?>" type="file" class="form-control" id="nim" placeholder="Gambar Materi"/>
+                            <input name="img_materi" id="img_materi" type="file" class="form-control" id="nim" placeholder="Gambar Materi"/>
                         </div>
                         <div class="form-group">
                             <label for="nim">Video Materi</label>
-                            <input name="video_materi" type="file" value="<?php echo $data['video_materi']; ?>" class="form-control" id="nim" placeholder="Video Materi"/>
+                            <input name="video_materi" type="file" class="form-control" id="nim" placeholder="Video Materi"/>
                         </div>
                     </div>
                 </div>

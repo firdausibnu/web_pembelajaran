@@ -3,7 +3,7 @@ require_once "../../../connect/a_connect.php";
 
 
 if (isset($_POST["submit"])) {
-    // print_r($_POST);
+    // print_r($_FILES);
     // return;
     $kode_seksi   = $_POST["kode_seksi"];
     $judul_materi = $_POST["judul_materi"];
