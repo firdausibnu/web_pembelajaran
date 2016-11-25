@@ -27,7 +27,37 @@
     </a>
     <ul class="treeview-menu">
       <li><a href="index.php?p=mk&l=1"><i class="fa fa-arrow-right" aria-hidden="true"></i>List Mata Kuliah</a></li>
-      <li><a href="index.php?p=mk&l=2"><i class="fa fa-arrow-right" aria-hidden="true"></i>List Admin</a></li>
+    </ul>
+  </li>
+  <li class="treeview">
+    <a href="#"><i class="fa fa-calendar"></i> <span>Jadwal</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+      <li><a href="index.php?p=jadwal&l=1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Kuliah</a></li>
+      <li><a href="index.php?p=jadwal&l=2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Ujian</a></li>
+    </ul>
+  </li>
+  <li class="treeview">
+    <a href="#"><i class="fa fa-list"></i> <span>Materi</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+      <li><a href="index.php?p=materi&l=1"><i class="fa fa-arrow-right" aria-hidden="true"></i>List Materi</a></li>
+    </ul>
+  </li>
+  <li class="treeview">
+    <a href="#"><i class="fa fa-home"></i> <span>Ruang</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+      <li><a href="index.php?p=ruang&l=1"><i class="fa fa-arrow-right" aria-hidden="true"></i>List Ruang</a></li>
     </ul>
   </li>
   <!-- Mata Kuliah -->

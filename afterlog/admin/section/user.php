@@ -34,7 +34,19 @@ require_once "../connect/a_connect.php";
                                     <td><?= $no ?></td>
                                     <td><?= $row['nim'] ?></td>
                                     <td><?= $row['password'] ?></td>
-                                    <td><a href="proc/get/user.php?n=<?= $row['nim'] ?>" data-target="#ModalDetail" style="cursor: pointer;" data-toggle="modal" title="Detail"><i class="fa fa-info" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<a href="proc/get/user.php?n=<?= $row['nim'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<a href="proc/delete/user.php?d=<?= $row['nim']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </td>
+                                    <td>
+                                    <a href="proc/get/user.php?n=<?= $row['nim'] ?>" data-target="#ModalDetail" style="cursor: pointer;" data-toggle="modal" title="Detail">
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                    </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
+
+                                    <a href="proc/get/user.php?n=<?= $row['nim'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
+                                    
+                                    <a href="proc/delete/user.php?d=<?= $row['nim']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus">
+                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    </a> 
+                                    </td>
                                 </tr>
                                 <?php
                                 $no++;

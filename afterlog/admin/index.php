@@ -1,10 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['role'])) {
-    if ($_SESSION['role'] != '2') {
-        header("location:../../index.html");
-    }
-}
+    include '../connect/a_connect.php';
+
+    $username = $_SESSION['username'];
+    $profile = $db->prepare("SELECT *from profile where nim = '".$username."'");
+    $profile->execute();
+    $data = $profile->fetch(PDO::FETCH_ASSOC);
+if (isset($_SESSION['username'])) {
+
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,6 +29,7 @@ if (!isset($_SESSION['role'])) {
         <link rel="stylesheet" href="css/AdminLTE.min.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="login/adminlte/dtpicker/css/bootstrap-datetimepicker.min.css">
 
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
               page. However, you can choose any other skin. Make sure you
@@ -35,6 +40,12 @@ if (!isset($_SESSION['role'])) {
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!-- [if lt IE 9] -->
+        <script src="login/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="login/adminlte/dtpicker/moment.js"></script>
+        <script src="login/adminlte/bootstrap/js/transition.js"></script>
+        <script src="login/adminlte/bootstrap/js/collapse.js"></script>
+        <script src="login/adminlte/dtpicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="login/adminlte/ckeditor/ckeditor.js"></script>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <!-- [endif] -->
@@ -66,23 +77,26 @@ if (!isset($_SESSION['role'])) {
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                    <img src="../../foto_profile/<?php echo $data['foto'];?>" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                    <span class="hidden-xs"><?= $_SESSION['nim'] ?></span>
+                                    <span class="hidden-xs"><?= $data['nim'] ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        <img src="../../foto_profile/<?php echo $data['foto'];?>" class="img-circle" alt="User Image">
                                         <p>
-                                            <?= $_SESSION['nama'] ?>
-                                            <small><?= $_SESSION['email'] ?></small>
+                                            <?= $data['nama'] ?>
+                                            <small><?= $data['email'] ?></small>
                                         </p>
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-right">
                                             <a href="proc/logout.php" class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                        <div class="pull-left">
+                                            <a href="#" data-target="#ModalEditProfile" data-toggle="modal" class="btn btn-default btn-flat">Edit Profile</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -91,6 +105,43 @@ if (!isset($_SESSION['role'])) {
                     </div>
                 </nav>
             </header>
+
+            <!-- Modal -->
+<div class="modal fade" id="ModalEditProfile" tabindex="-1" role="dialog" aria-labelledby="MtambahData">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
+      </div>
+      <form action="proc/edit/profile.php" enctype="multipart/form-data" method="POST" role="form">
+      <div class="modal-body">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="kode_seksi">Nama</label>
+            <input name="nama" type="text" class="form-control" value="<?php echo $data['nama']; ?>" id="kode_seksi" placeholder="Nama">
+          </div>
+          <input type="hidden" name="nim" value="<?php echo $data['nim'];?>">
+          <div class="form-group">
+            <label for="nama_mk">Email</label>
+            <input name="email" type="email" class="form-control" value="<?php echo $data['email']; ?>" id="nama_mk" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="rpkps">Upload Foto</label><br>
+            <img style="max-width: 100px;max-height: 100px;" src="../../foto_profile/<?php echo $data['foto'];?>"><br><br>
+            <input name="foto" value="<?php echo $data['foto'];?>" type="file" id="rpkps">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
             <!-- Left side column. contains the logo and sidebar -->
             <?php include 'part/sidebar.php'; ?>
 
@@ -115,7 +166,21 @@ if (!isset($_SESSION['role'])) {
                             } else if ($_GET['l'] == '2') {
                                 include 'section/admin.php';
                             }
-                        }
+                        } elseif ($_GET['p'] == 'jadwal') {
+                            if ($_GET['l'] == '1') {
+                                include 'section/jadwal_kuliah.php';
+                            } else if ($_GET['l'] == '2') {
+                                include 'section/jadwal_ujian.php';
+                            }
+                        } elseif ($_GET['p'] == 'materi') {
+                            if ($_GET['l'] == '1') {
+                                include 'section/materi.php';
+                            } 
+                        } elseif ($_GET['p'] == 'ruang') {
+                            if ($_GET['l'] == '1') {
+                                include 'section/ruang.php';
+                            }
+                        } 
                     } else {
                         echo "string";
                     }
@@ -161,3 +226,5 @@ if (!isset($_SESSION['role'])) {
 
     </body>
 </html>
+<?php } else header("location:login/login.php")
+?>

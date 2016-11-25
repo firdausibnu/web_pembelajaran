@@ -1,3 +1,14 @@
+<?php
+session_start();
+include 'connect/a_connect.php';
+?>
+<?php
+    $username = $_SESSION['username'];
+    $profile = $db->prepare("SELECT *from profile where nim = '".$username."'");
+    $profile->execute();
+    $data = $profile->fetch(PDO::FETCH_ASSOC);
+    if(isset($_SESSION['username'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,40 +39,41 @@
 
     <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
+
         <!--yang ini di komen aja buat develop atau edit content, biar ga muncul2 loading-->
         <!--<div class="loader"></div>-->
         <!--header-->
-        <?PHP include 'section/header.html' ?>
+        <?PHP include 'section/header.php' ?>
         <!--end header-->
         <!-- ==== HEADERWRAP ==== -->
-        <?PHP include 'section/beranda.html' ?>
+        <?PHP include 'section/beranda.php' ?>
         <!-- /headerwrap -->
 
         <!-- ==== INFORMASI ==== -->
-        <?PHP include 'section/informasi.html' ?>
+        <?PHP include 'section/informasi.php' ?>
         <!-- /informasi -->
 
         <!-- ==== daftar isi ==== -->
-        <?PHP include 'section/daftar_isi.html' ?>
+        <?PHP include 'section/daftar_isi.php' ?>
         <!-- /daftar isi -->
 
 
         <!-- ==== materi ==== -->
-        <?PHP include 'section/materi.html' ?>
+        <?PHP include 'section/materi.php' ?>
         <!-- materi -->
 
         <!-- ==== DAFTAR KUIS ==== -->
-        <?PHP include 'section/list_kuis.html' ?>
+        <?PHP include 'section/list_kuis.php' ?>
         <!-- container -->
 
         <!-- ==== KUIS 1 ==== -->
-        <?PHP include 'section/kuis1.html' ?>
+        <?PHP include 'section/kuis1.php' ?>
 
         <div id="content">
 
         </div>
         <!-- container -->
-		<?PHP include 'section/footer.html' ?>
+		<?PHP include 'section/footer.php' ?>
 
         <!--end footer-->
  <a href="#0" class="cd-top">Top</a>
@@ -94,3 +106,8 @@
         <script type="text/javascript" src="../js/plugin/app.js"></script> -->
     </body>
 </html>
+<?php
+}else{
+        header("Location: ../index.php");
+    }
+?>

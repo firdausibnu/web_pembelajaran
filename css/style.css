@@ -60,7 +60,7 @@ label.highlight {
   color: #000;
 }
 
-input, textarea {
+input, textarea, select {
   font-size: 18px;
   display: block;
   width: 100%;

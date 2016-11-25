@@ -38,7 +38,7 @@ require_once "../connect/a_connect.php";
 
                 ?>
                 <tr>
-                  <td><?=$no?></td>
+                  <td><?=$no++?></td>
                   <td><?=$row['kode_seksi']?></td>
                   <td><?=$row['nama_mk']?></td>
                   <td><?=$row['jenis_mk']?></td>
@@ -46,7 +46,15 @@ require_once "../connect/a_connect.php";
                   <td><?=$row['praktek_sks']?></td>
                   <td><?=$row['total_sks']?></td>
                   <td><?=$row['rpkps']?></td>
-                  <td><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </td>
+                  <td>
+                    <a href="proc/get/mk.php?n=<?= $row['kode_seksi'] ?>"  data-target="#ModalEditData" style="cursor: pointer;" data-toggle="modal" title="Ubah Data">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>E
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;
+                                    
+                    <a href="proc/delete/mk.php?d=<?= $row['kode_seksi']; ?>" onclick="return confirm('Yakin Ingin Menghapus Data Ini ?');" data-toggle="tooltip" title="Hapus">
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>D
+                    </a> 
+                  </td>
                 </tr>
                 <?php $no++;}?>
               </tbody>
@@ -120,7 +128,11 @@ require_once "../connect/a_connect.php";
           </div>
           <div class="form-group">
             <label for="rpkps">Upload RPKPS</label>
-            <input name="rpkps"type="file" id="rpkps">
+            <input name="rpkps" type="file" id="rpkps">
+          </div>
+          <div class="form-group">
+                <label for="rpkps">Upload Cover</label>
+                <input name="cover_img" type="file" id="rpkps">
           </div>
         </div>
       </div>
@@ -131,4 +143,18 @@ require_once "../connect/a_connect.php";
     </form>
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="ModalEditData" tabindex="-1" role="dialog" aria-labelledby="MtambahData">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Data Mata Kuliah</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
 </div>

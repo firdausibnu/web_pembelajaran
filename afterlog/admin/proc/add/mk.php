@@ -9,6 +9,7 @@ if(isset($_POST["submit"])){
   $teori = $_POST["sks_teori"];
   $praktek = $_POST["sks_praktek"];
   $total_sks = $_POST["total_sks"];
+  $cover_img = '';
 
     
 
@@ -36,9 +37,16 @@ if(isset($_POST["submit"])){
         
         if($move){
 
-        $sql = "INSERT INTO mata_kuliah(kode_seksi, nama_mk, jenis_mk, teori_sks, praktek_sks, total_sks, rpkps) VALUES 
+            if ($_FILES['cover_img']['tmp_name'] != "") {
+                                
+                                $tmp_cover_img = $_FILES['cover_img']['tmp_name'];
+                                $cover_img     = $_FILES['cover_img']['name'];
+                                move_uploaded_file($tmp_cover_img, "../../../../cover_img/" . $cover_img);
+            }
+
+        $sql = "INSERT INTO mata_kuliah(kode_seksi, nama_mk, jenis_mk, teori_sks, praktek_sks, total_sks, rpkps, cover_img) VALUES 
         ('" . $kode_seksi . "', '" . $nama_mk. "', '" . $jenis_mk . "', '" . $teori . "', '" . $praktek . "',
-          '" . $total_sks. "', '" . $temp_rpkps. "')";    
+          '" . $total_sks. "', '" . $temp_rpkps. "', '" . $cover_img . "')";    
         
         $stmt = $db->prepare($sql);
         $stmt->execute();
@@ -63,5 +71,6 @@ if(isset($_POST["submit"])){
             }
     }
 }
+
 
 ?>
