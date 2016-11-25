@@ -48,10 +48,10 @@ if (isset($_POST["submit"])) {
                                             kode_seksi = '" . $kode_seksi . "',
                                             judul_materi = '" . $judul_materi . "',
                                             materi = '" . $materi . "',
-                                            ".$update_file_materi.",
-                                            ".$update_tugas.",
-                                            ".$update_img_materi."
-                                            ".$update_video_materi."
+                                            file_materi = '".$update_file_materi."',
+                                            update_tugas = '".$update_tugas."',
+                                            img_materi = '".$update_img_materi."',
+                                            video materi = '".$update_video_materi."'
                                             WHERE kode_seksi = '".$kode_seksi."'";
                                             
                                             $stmt = $db->prepare($sql);
