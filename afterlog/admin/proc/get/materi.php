@@ -61,9 +61,10 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success" name="submit">Tambah Data</button>
+                    <button type="submit" class="btn btn-success" name="submit">Edit Data</button>
                 </div>
             </form>
+
 <script src="login/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <script src="login/adminlte/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
